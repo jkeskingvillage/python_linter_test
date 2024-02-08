@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Optional
 from pydantic import BaseModel, NoneStr
 
 
@@ -6,7 +7,7 @@ class Model(BaseModel):
     age: int
     first_name = "John"
     last_name: NoneStr = None
-    signup_ts: datetime | None = None
+    signup_ts: Optional[datetime] = None
     list_of_ints: list[int]
 
 
