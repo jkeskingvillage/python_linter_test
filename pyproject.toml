@@ -1,0 +1,57 @@
+[project]
+name = "pre_commit_example"
+version = "0.0.1"
+authors = [
+    { name = "Jung koo Kang", email = "jungkoo.kang@gmail.com" },
+]
+description = "xxx"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "pydantic>=2.5.2",
+]
+
+[project.optional-dependencies]
+test = ["coverage==7.2.5"]
+dev = [
+    "check-manifest",
+    "pytest==7.3.1",
+    "black==22.3.0",
+    "pylint==2.17.4",
+    "flake8==6.0.0",
+    "pre-commit==3.3.1",
+    "Flake8-pyproject"
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["server*"]
+
+[project.urls]
+"Repository" = "https://github.com/jkeskingvillage/python_linter_test"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 80
+preview = true
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
