@@ -25,4 +25,4 @@ repos:
     hooks:
       - id: mypy
         additional_dependencies: [pydantic]
-        args: [--ignore-missing-imports,--follow-import=skip,--strict-optional]
+        args: [] # --strict-optional, --ignore-missing-imports, --follow-import=skip

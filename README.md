@@ -6,9 +6,6 @@ Python linter test
 ```
 pip install -e .
 pip install -e ".[dev]"
-```
-
-```
 pre-commit install
 ```
 
@@ -17,16 +14,6 @@ pre-commit install
 
 ```
 pre-commit run --all-files
-```
-
-- only mypy
-
-```
-mypy \
-  --ignore-missing-imports \
-  --follow-imports=skip \
-  --strict-optional \
-  test.py
 ```
 
 # Commit without checks
