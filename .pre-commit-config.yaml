@@ -5,12 +5,13 @@ repos:
     rev: 23.9.1
     hooks:
       - id: black
+        args: [--line-length=88]
 
-  - repo: https://github.com/pylint-dev/pylint
-    rev: v3.0.3
+  - repo: https://github.com/pre-commit/mirrors-pylint
+    rev: v3.0.0a5
     hooks:
       - id: pylint
-        args: [--disable=all, --enable=unused-import]
+        args: ['--disable=C,R']
 
   - repo: https://github.com/pycqa/flake8
     rev: 6.1.0
@@ -18,7 +19,7 @@ repos:
       - id: flake8
         entry: flake8
         additional_dependencies: [pyproject-flake8]
-        args: [--max-line-length=120]
+        args: [--max-line-length=88, '--extend-ignore=E203,E701']
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.5.1
